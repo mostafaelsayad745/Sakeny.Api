@@ -1,0 +1,356 @@
+{
+	"info": {
+		"_postman_id": "36c36b6b-4c7f-4025-ac7a-c02790b70a74",
+		"name": "sakeny",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25925575",
+		"_collection_link": "https://interstellar-crater-69736.postman.co/workspace/sakeny~722315bc-a937-4eeb-b4dc-f157e3e48ad1/collection/25925575-36c36b6b-4c7f-4025-ac7a-c02790b70a74?action=share&source=collection_link&creator=25925575"
+	},
+	"item": [
+		{
+			"name": "sakeny.api",
+			"item": [
+				{
+					"name": "GET Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:{{portNumber}}/api/users",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{portNumber}}",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:{{portNumber}}/api/users/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{portNumber}}",
+							"path": [
+								"api",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET FeedbackPosts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:{{portNumber}}/api/users/2/postfeedbacks/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{portNumber}}",
+							"path": [
+								"api",
+								"users",
+								"2",
+								"postfeedbacks",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"hany.ahmed\",\r\n    \"userPassword\": \"user2_password\",\r\n    \"userFullName\": \"hany ahmed mohamed\",\r\n    \"userEmail\": \"user2@example.com\",\r\n    \"userNatId\": \"98765432109877\",\r\n    \"userGender\": \"Female\",\r\n    \"userAge\": 30,\r\n    \"userInfo\": \"Mobile App Developer\",\r\n    \"userAddress\": \"456 Oak Avenue, Town\",\r\n    \"userAccountType\": \"Tenant\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:{{portNumber}}/api/users",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{portNumber}}",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST User (missing all properties)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:{{portNumber}}/api/users",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{portNumber}}",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST User (missing some properties)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"amir.ahmed\",\r\n    \"userPassword\": \"user3_password\",\r\n    \"userFullName\": \"amir ahmed mohamed\",\r\n    \"userEmail\": \"amir@example.com\",\r\n    \"userNatId\": \"98765432109877\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:{{portNumber}}/api/users",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{portNumber}}",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 2,\r\n    \"userName\": \"abdelrahman_mansour\",\r\n    \"userPassword\": \"123456789\",\r\n    \"userFullName\": \"عبدالرحمن منصور حامد\",\r\n    \"userEmail\": \"abdelrahmanmansour@gmail.com\",\r\n    \"userNatId\": \"30205301211458\",\r\n    \"userGender\": \"ذكر\",\r\n    \"userAge\": 25,\r\n    \"userInfo\": \"Flutter Dev\",\r\n    \"userAddress\": \"المنصورة - طلخا -السوق التحتاني\",\r\n    \"userAccountType\": \"مستأجر\",\r\n    \"postFeedbackTbls\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:{{portNumber}}/api/users/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{portNumber}}",
+							"path": [
+								"api",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT User (changing one property)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"userInfo\": \"Flutter Dev\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:{{portNumber}}/api/users/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{portNumber}}",
+							"path": [
+								"api",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH User",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"op\":\"replace\",\r\n        \"path\":\"/userFullName\",\r\n        \"value\":\"Kareem mohamed mostafa\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:{{portNumber}}/api/users/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{portNumber}}",
+							"path": [
+								"api",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH User (update multiple)",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"op\":\"replace\",\r\n        \"path\":\"/userFullName\",\r\n        \"value\":\"Khaled mohamed mostafa\"\r\n    },\r\n    {\r\n        \"op\":\"replace\",\r\n        \"path\":\"/userEmail\",\r\n        \"value\":\"khaled.mohamed.mostafa@gmail.com\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:{{portNumber}}/api/users/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{portNumber}}",
+							"path": [
+								"api",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:{{portNumber}}/api/users/6",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{portNumber}}",
+							"path": [
+								"api",
+								"users",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "POST Postfeedback ",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"PostFeedDate\": \"2024-01-24T12:34:56.789Z\",\r\n  \"PostFeedTime\": \"02:30:00\",\r\n  \"PostFeedText\": \"This is a dummy post feedback text.\",\r\n  \"PostId\": 123,\r\n  \"UserId\": 456\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:{{portNumber}}/api/users/2/postfeedbacks",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"api",
+						"users",
+						"2",
+						"postfeedbacks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH PostFeedback",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "portNumber",
+			"value": "7080"
+		}
+	]
+}
