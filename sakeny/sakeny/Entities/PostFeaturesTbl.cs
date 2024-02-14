@@ -11,9 +11,11 @@ namespace sakeny.Entities
     [Index("FeaturesId", "PostId", Name = "POST_FEATURES_INDEX", IsUnique = true)]
     public partial class PostFeaturesTbl
     {
+        [Key]
         [Column("FEATURES_ID", TypeName = "numeric(18, 0)")]
         public decimal? FeaturesId { get; set; }
 
+        [Key]
         [Column("POST_ID", TypeName = "numeric(18, 0)")]
         public decimal? PostId { get; set; }
 

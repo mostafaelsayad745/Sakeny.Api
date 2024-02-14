@@ -13,10 +13,12 @@ namespace sakeny.Entities
         public UsersTbl()
         {
             PostFeedbackTbls = new HashSet<PostFeedbackTbl>();
+            SentMessages = new HashSet<UserChatTbl>();
+            ReceivedMessages = new HashSet<UserChatTbl>();
         }
 
-        public UsersTbl(string userName, string userPassword, string userFullName, 
-            string userEmail, string userNatId, string userGender, 
+        public UsersTbl(string userName, string userPassword, string userFullName,
+            string userEmail, string userNatId, string userGender,
             int userAge, string userInfo, string userAddress, string userAccountType)
         {
             UserName = userName;
@@ -45,6 +47,7 @@ namespace sakeny.Entities
         [StringLength(300)]
         public string UserFullName { get; set; }
         [Column("USER_EMAIL")]
+        [EmailAddress]
         [StringLength(300)]
         public string UserEmail { get; set; }
         [Column("USER_NAT_ID")]
@@ -63,5 +66,22 @@ namespace sakeny.Entities
 
         [InverseProperty("User")]
         public virtual ICollection<PostFeedbackTbl> PostFeedbackTbls { get; set; }
+
+        // adding propertry of posts that the user liked
+
+
+        //---------------------------------------------
+
+        [InverseProperty("Sender")]
+        public virtual ICollection<UserChatTbl> SentMessages { get; set; }
+
+        [InverseProperty("Receiver")]
+        public virtual ICollection<UserChatTbl> ReceivedMessages { get; set; }
+
+        [InverseProperty("User")]
+        public virtual ICollection<NotificationTbl> Notifications { get; set; }
+
+        [InverseProperty("User")]
+        public virtual ICollection<PostsTbl> Posts { get; set; }
     }
 }

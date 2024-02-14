@@ -33,8 +33,11 @@ namespace sakeny.Entities
         [InverseProperty("PostFeedbackTbls")]
         public virtual PostsTbl? Post { get; set; }
 
+
+        // who is made the feedback or the 
+        
         [ForeignKey("UserId")]
         [InverseProperty("PostFeedbackTbls")]
-        public virtual UsersTbl? User { get; set; }
+        public virtual UsersTbl? User { get; set; } 
     }
 }

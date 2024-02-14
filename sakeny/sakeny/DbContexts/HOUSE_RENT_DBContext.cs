@@ -26,6 +26,7 @@ namespace sakeny.DbContexts
         public virtual DbSet<UserChatTbl> UserChatTbls { get; set; } = null!;
         public virtual DbSet<UserFeedbackTbl> UserFeedbackTbls { get; set; } = null!;
         public virtual DbSet<UsersTbl> UsersTbls { get; set; } = null!;
+        public virtual DbSet<NotificationTbl> Notifications { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -47,6 +48,8 @@ namespace sakeny.DbContexts
 
             modelBuilder.Entity<PostFeaturesTbl>(entity =>
             {
+                entity.HasKey(pf => new { pf.FeaturesId, pf.PostId });
+
                 entity.HasOne(d => d.Features)
                     .WithMany()
                     .HasForeignKey(d => d.FeaturesId)

@@ -61,11 +61,21 @@ namespace sakeny.Entities
         [Column("POST_LONGITUDE")]
         public string? PostLongitude { get; set; }
         [Column("POST_STATUE")]
-        public bool? PostStatue { get; set; }
+        public bool? PostStatue { get; set; } 
 
         [InverseProperty("Post")]
         public virtual ICollection<PostFeedbackTbl> PostFeedbackTbls { get; set; }
         [InverseProperty("Post")]
         public virtual ICollection<PostPicTbl> PostPicTbls { get; set; }
+
+
+
+        //new modification
+        //[Column("POST_USER_ID", TypeName = "numeric(18, 0)")]
+        public decimal PostUserId { get; set; }
+
+        [ForeignKey("PostUserId")]
+        public virtual UsersTbl User { get; set; }
+
     }
 }
